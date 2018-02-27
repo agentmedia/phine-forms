@@ -17,7 +17,7 @@
         "agentmedia/phine-builtin": "*",
         "agentmedia/phine-core": "*",
         "agentmedia/phine-framework": "*",
-        "phpmailer/phpmailer": ">=5.2.10"
+        "phpmailer/phpmailer": ">=6.0.3"
         
     },
     "autoload": {

@@ -26,7 +26,7 @@ class Manifest extends BundleManifest
      */
     public function Version()
     {
-        return '1.0.1';
+        return '1.0.2';
     }
     
     /**
@@ -48,8 +48,8 @@ class Manifest extends BundleManifest
 
     public function Dependencies()
     {
-        return array(new BundleDependency('Core', '1.2.2', '1.2.3'), 
-            new BundleDependency('BuiltIn', '1.0.2', '1.0.3'));
+        return array(new BundleDependency('Core', '1.2.3', '1.2.3'), 
+            new BundleDependency('BuiltIn', '1.0.2', '1.0.4'));
     }
 
     protected function LoadFrontendCode()

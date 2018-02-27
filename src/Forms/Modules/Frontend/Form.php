@@ -21,6 +21,7 @@ use Phine\Framework\Database\Sql\SetList;
 use Phine\Bundles\Forms\Modules\Backend\FormForm;
 use Phine\Framework\System\Http\Response;
 use Phine\Bundles\Core\Logic\Routing\FrontendRouter;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Form extends FrontendForm
 {
@@ -242,7 +243,7 @@ class Form extends FrontendForm
     {
         $texts = array();
         $subject = Trans('Core.Forms.Form.DefaultSubject');
-        $mailer = new \PHPMailer();
+        $mailer = new PHPMailer();
         $mailer->isHTML(false);
         $mailer->CharSet = 'UTF-8';
         $mailer->setFrom($this->form->GetSendFrom());
