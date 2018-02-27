@@ -166,7 +166,7 @@ class Form extends FrontendForm
      * @return string
      */
     private static function TypeTranslationPrefix($type) {
-        return self::MyBundle() . '.' . str_replace('-', '.', $type ) . '.';
+        return str_replace('-', '.', $type ) . '.';
     }
     
     
