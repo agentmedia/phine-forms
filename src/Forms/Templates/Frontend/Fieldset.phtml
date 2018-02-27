@@ -1,0 +1,6 @@
+<fieldset<?php if ($this->id):?> id="<?php HtmlOut($this->id);?>"<?php endif; ?><?php if ($this->classes):?> class="<?php HtmlOut($this->classes);?>"<?php endif; ?>>
+    <?php if ($this->legend): ?>
+    <legend><?php HtmlOut($this->legend) ?></legend>
+    <?php endif; ?>
+    <?php echo $this->RenderChildren(); ?>
+</fieldset>

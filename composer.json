@@ -1,0 +1,28 @@
+{
+    "name": "agentmedia/phine-forms",
+    "description": "The forms bundle for the Phine CMS, allows frontend form building",
+    "license": "Apache-2.0",
+    "type": "phine-bundle",
+    "homepage": "http://github.com/agentmedia/phine-forms",
+    "authors": [
+        {
+            "name": "Klaus Potzesny",
+            "homepage": "http://www.agent-media.com/",
+            "role": "head developer",
+            "email": "info@agent-media.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "agentmedia/phine-builtin": "*",
+        "agentmedia/phine-core": "*",
+        "agentmedia/phine-framework": "*",
+        "phpmailer/phpmailer": ">=5.2.10"
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Phine\\Bundles\\": "src/"
+        }
+    }
+}

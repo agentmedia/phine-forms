@@ -1,0 +1,17 @@
+<?php if ($this->label): ?>
+<label for="<?php HtmlOut($this->id) ?>"><?php HtmlOut($this->label); ?></label>
+<?php endif; ?>
+<select  name="<?php HtmlOut($this->name) ?>" id="<?php HtmlOut($this->id)?>"<?php if ($this->required): ?> required="required"<?php endif; ?><?php if ($this->classes): ?> class="<?php HtmlOut($this->classes)?>"<?php endif ?>>
+    <?php foreach ($this->options as $value=>$text): ?>
+    <option value="<?php HtmlOut($value)?>"<?php if ($value == $this->value):?> selected="selected"<?php endif; ?>><?php HtmlOut($text) ?></option>
+    <?php endforeach; ?>
+</select>
+<?php if ($this->checkFailed): ?>
+<small class="error">
+    <?php foreach ($this->errors as $error): ?>
+    <span>
+        <?php HtmlOut($error); ?>
+    </span>
+    <?php endforeach ?>
+</small>
+<?php endif; ?>

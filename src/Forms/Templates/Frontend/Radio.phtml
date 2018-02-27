@@ -1,0 +1,23 @@
+<?php if ($this->label): ?>
+<label>
+    <?php HtmlOut($this->label)?>
+</label>
+<?php endif; ?>
+<?php $idx = 1; ?>
+<?php foreach ($this->options as $value=>$text): ?>
+<label for="<?php HtmlOut($this->id) ?>-<?php HtmlOut($idx) ?>" class="inline">
+    <input name="<?php HtmlOut($this->name)?>" value="<?php HtmlOut($value) ?>" 
+           type="radio" id="<?php HtmlOut($this->id) ?>-<?php HtmlOut($idx) ?>"<?php if ($value == $this->value): ?> checked="checked"<?php endif; ?><?php if ($this->classes): ?> class="<?php HtmlOut($this->classes) ?>"<?php endif; ?> />
+    <?php HtmlOut($text); ?>
+</label>
+<?php ++$idx; ?>
+<?php endforeach; ?>
+<?php if ($this->checkFailed): ?>
+<small class="error">
+    <?php foreach ($this->errors as $error): ?>
+    <span>
+        <?php HtmlOut($error); ?>
+    </span>
+    <?php endforeach ?>
+</small>
+<?php endif; ?>

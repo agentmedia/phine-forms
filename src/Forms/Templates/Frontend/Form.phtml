@@ -1,0 +1,3 @@
+<form method="<?php HtmlOut($this->method); ?>" action="<?php HtmlOut(CurrentUri()) ?>"<?php if ($this->CssID()):?> id="<?php HtmlOut($this->CssID()) ?>"<?php endif; ?><?php if ($this->CssClass()):?> class="<?php HtmlOut($this->CssClass()) ?>"<?php endif; ?>>
+    <?php echo $this->RenderChildren(); ?>
+</form>

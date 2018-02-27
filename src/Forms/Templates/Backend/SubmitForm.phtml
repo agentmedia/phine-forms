@@ -1,0 +1,28 @@
+<h1><a href="<?php HtmlOut($this->BackLink()) ?>" class="fa fa-chevron-circle-left right" title="<?php TransOut('Core.ButtonText.Back')?>"></a><?php TransOut('Forms.SubmitForm.Title')?></h1>
+<p><?php TransOut('Forms.SubmitForm.Description') ?></p>
+<form method="post" action="<?php HtmlOut(CurrentUri()) ?>">
+    <fieldset>
+        <legend><?php TransOut('Forms.SubmitForm.Legend') ?></legend>
+        <div class="row">
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('Name') ?>
+            </div>
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('Value') ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('Template') ?>
+            </div>
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('CssID') ?>
+            </div>
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('CssClass') ?>
+            </div>
+        </div>
+    </fieldset>
+    <?php echo $this->RenderAccessElements(); ?>
+    <?php echo $this->RenderSubmit(); ?>
+</form>

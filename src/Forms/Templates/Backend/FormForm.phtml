@@ -1,0 +1,45 @@
+<h1><a href="<?php HtmlOut($this->BackLink()) ?>" class="fa fa-chevron-circle-left right" title="<?php TransOut('Core.ButtonText.Back')?>"></a><?php TransOut('Forms.FormForm.Title')?></h1>
+<p><?php TransOut('Forms.FormForm.Description') ?></p>
+<form method="post" action="<?php HtmlOut(CurrentUri()) ?>">
+    <fieldset>
+        <legend><?php TransOut('Forms.FormForm.Legend') ?></legend>
+        <div class="row">
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('Method') ?>
+            </div>
+                <div class="medium-6 columns">
+                <?php echo $this->RenderElement('Template') ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-12 columns">
+                <?php echo $this->selector->Render(); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-12 columns">
+                <?php echo $this->RenderElement('SaveTo') ?>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('SendFrom') ?>
+            </div>
+            
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('SendTo') ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('CssID') ?>
+            </div>
+            <div class="medium-6 columns">
+                <?php echo $this->RenderElement('CssClass') ?>
+            </div>
+        </div>
+    </fieldset>
+    <?php echo $this->RenderAccessElements(); ?>
+    <?php echo $this->RenderSubmit(); ?>
+</form>
