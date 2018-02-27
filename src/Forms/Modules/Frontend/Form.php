@@ -126,7 +126,7 @@ class Form extends FrontendForm
         $this->AddField($field, !$textfield->GetLabel(), $textfield->GetLabel());
         if ($textfield->GetRequired())
         {
-            $this->SetRequired($name);
+            $this->SetRequired($name, self::TypeTranslationPrefix(Textfield::MyType()));
         }
         $this->AddTextfieldValidations($textfield);
     }
@@ -156,8 +156,17 @@ class Form extends FrontendForm
         }
         foreach ($validators as $validator)
         {
-            $this->AddValidator($textfield->GetName(), $validator);
+            $this->AddValidator($textfield->GetName(), $validator, self::TypeTranslationPrefix(Textfield::MyType()));
         }
+    }
+    
+    /**
+     * The short translation prefix without (Forms.Form.$type)
+     * ret
+     * @return string
+     */
+    private static function TypeTranslationPrefix($type) {
+        return self::MyBundle() . '.' . str_replace('-', '.', $type ) . '.';
     }
     
     
@@ -167,7 +176,7 @@ class Form extends FrontendForm
         $this->AddField($field, !$textarea->GetLabel(), $textarea->GetLabel());
         if ($textarea->GetRequired())
         {
-            $this->SetRequired($textarea->GetName());
+            $this->SetRequired($textarea->GetName(), self::TypeTranslationPrefix(Textarea::MyType()));
         }
     }
     
@@ -184,7 +193,7 @@ class Form extends FrontendForm
         $this->AddField($field, false, $select->GetLabel());
         if ($select->GetRequired())
         {
-            $this->SetRequired($select->GetName());
+            $this->SetRequired($select->GetName(), self::TypeTranslationPrefix(Select::MyType()));
         }
        
     }
@@ -199,7 +208,7 @@ class Form extends FrontendForm
         $this->AddField($field, !$checkbox->GetLabel(), $checkbox->GetLabel());
         if ($checkbox->GetRequired())
         {
-            $this->SetRequired($checkbox->GetName());
+            $this->SetRequired($checkbox->GetName(), self::TypeTranslationPrefix(Checkbox::MyType()));
         }
     }
     
@@ -211,7 +220,7 @@ class Form extends FrontendForm
         $this->AddField($field, !$radio->GetLabel(), $radio->GetLabel());
         if ($radio->GetRequired())
         {
-            $this->SetRequired($radio->GetName());
+            $this->SetRequired($radio->GetName(), self::TypeTranslationPrefix(Radio::MyType()));
         }
     }
     
