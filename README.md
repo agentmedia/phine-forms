@@ -27,3 +27,7 @@ Multiple translation additions
 === 1.0.7 ===
 
  - corrected number parsing in number field form
+
+=== 1.0.8 ===
+
+ - corrected step size handling and removing some invalid code

@@ -88,9 +88,9 @@ class Numberfield extends FieldModule
         $numberfield = ContentNumberfield::Schema()->ByContent($this->Content());
         $this->label = $numberfield->GetLabel();
         $this->name = $numberfield->GetName();
-        $this->pattern = $numberfield->GetPattern();
         $this->min = $numberfield->GetMin();
         $this->max = $numberfield->GetMax();
+        $this->step = $numberfield->GetStep();
         $this->required = $numberfield->GetRequired();
         $this->value = $numberfield->GetValue();
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
