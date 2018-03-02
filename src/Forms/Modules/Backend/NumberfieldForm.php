@@ -7,6 +7,7 @@ use Phine\Bundles\Forms\Modules\Frontend\Numberfield;
 use Phine\Framework\FormElements\Fields\Input;
 use Phine\Framework\FormElements\Fields\Checkbox;
 use Phine\Framework\Validation\Number;
+use Phine\Framework\System\Conversion\GlobalNumberParser;
 
 class NumberfieldForm extends ContentForm
 {
@@ -114,15 +115,27 @@ class NumberfieldForm extends ContentForm
     {
         $this->numberfield->SetLabel($this->Value('Label'));
         $this->numberfield->SetName($this->Value('Name'));
+
+        $max = 0;
         
-        $this->numberfield->SetMax($this->Value('Max') !== '' ? (float)$this->Value('Max') : NULL);
-        $this->numberfield->SetMin($this->Value('Min') !== '' ? (float)$this->Value('Min') : NULL);
-        $this->numberfield->SetStep((float)$this->Value('Step'));
+        $this->numberfield->SetMax($this->ParseFloat($this->Value('Max'), true));
+        $this->numberfield->SetMin($this->ParseFloat($this->Value('Min'), true));
+        $this->numberfield->SetStep($this->ParseFloat($this->Value('Step'), false));
 
         $this->numberfield->SetValue($this->Value('Value'));
         $this->numberfield->SetRequired((bool)$this->Value('Required'));
         return $this->numberfield;
     }
-
+    
+    private function ParseFloat($value, $emptyIsNull = false) {
+        if ($value === '') {
+            if ($emptyIsNull) {
+                return null;
+            } else {
+                return 0.0;
+            }
+        }
+        return GlobalNumberParser::Parse($value);
+    }
 }
 

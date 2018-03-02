@@ -23,3 +23,7 @@ Multiple translation additions
 - added "tel" to text field types
 - added minlength to text field
 - added minlength, maxlength and pattern to textarea (validated in PHP after post-back)
+
+=== 1.0.7 ===
+
+ - corrected number parsing in number field form
