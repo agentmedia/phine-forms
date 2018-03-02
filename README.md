@@ -17,7 +17,7 @@ Included are the following form parts
 === 1.0.0 - 1.0.4 ===
 Multiple translation additions
 
-=== 1.0.5 ===
+=== 1.0.5, 1.0.6 ===
 
 - Removed "number" from text field types enum and made it its own field
 - added "tel" to text field types
