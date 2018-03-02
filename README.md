@@ -31,3 +31,7 @@ Multiple translation additions
 === 1.0.8 ===
 
  - corrected step size handling and removing some invalid code
+
+=== 1.0.9 ===
+
+- corrected the step attribute to default to "any"
