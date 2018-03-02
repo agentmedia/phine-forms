@@ -114,8 +114,6 @@ class NumberfieldForm extends ContentForm
     {
         $this->numberfield->SetLabel($this->Value('Label'));
         $this->numberfield->SetName($this->Value('Name'));
-        $this->numberfield->SetPattern($this->Value('Pattern'));
-        $this->numberfield->SetType($this->Value('Type'));
         
         $this->numberfield->SetMax($this->Value('Max') !== '' ? (float)$this->Value('Max') : NULL);
         $this->numberfield->SetMin($this->Value('Min') !== '' ? (float)$this->Value('Min') : NULL);
