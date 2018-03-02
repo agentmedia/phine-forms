@@ -2,15 +2,13 @@
 
 namespace Phine\Bundles\Forms\Modules\Frontend;
 use Phine\Bundles\Forms\Modules\Frontend\Base\FieldModule;
-use App\Phine\Database\Forms\ContentTextfield;
-use Phine\Bundles\Forms\Logic\Enums\TextfieldType;
-use Phine\Bundles\Forms\Modules\Backend\TextfieldForm;
-
+use App\Phine\Database\Forms\ContentNumberfield;
+use Phine\Bundles\Forms\Modules\Backend\NumberfieldForm;
 
 /**
- * The textfield renderer
+ * The numberfield renderer
  */
-class Textfield extends FieldModule
+class Numberfield extends FieldModule
 {
     /**
      * The field label
@@ -30,17 +28,6 @@ class Textfield extends FieldModule
      */
     protected $value;
     
-    /**
-     * The pattern attribute
-     * @var string
-     */
-    protected $pattern;
-    
-    /**
-     * The field type
-     * @var TextfieldType
-     */
-    protected $type;
     
     /**
      * The dom id
@@ -49,16 +36,23 @@ class Textfield extends FieldModule
     protected $id;
    
    /**
-     * The min field length
+     * The min field value
      * @var int
      */
-    protected $minLength;
+    protected $min;
     
     /**
-     * The max field length
-     * @var int
+     * The max field value
+     * @var float
      */
-    protected $maxLength;
+    protected $max;
+    
+    /**
+     * The max field value
+     * @var float
+     */
+    protected $step;
+    
     
     /**
      * True if required
@@ -91,15 +85,14 @@ class Textfield extends FieldModule
      */
     protected function Init()
     {
-        $textfield = ContentTextfield::Schema()->ByContent($this->Content());
-        $this->label = $textfield->GetLabel();
-        $this->name = $textfield->GetName();
-        $this->pattern = $textfield->GetPattern();
-        $this->type = TextfieldType::ByValue($textfield->GetType());
-        $this->minLength = (int)$textfield->GetMinLength();
-        $this->maxLength = (int)$textfield->GetMaxLength();
-        $this->required = $textfield->GetRequired();
-        $this->value = $textfield->GetValue();
+        $numberfield = ContentNumberfield::Schema()->ByContent($this->Content());
+        $this->label = $numberfield->GetLabel();
+        $this->name = $numberfield->GetName();
+        $this->pattern = $numberfield->GetPattern();
+        $this->min = $numberfield->GetMin();
+        $this->max = $numberfield->GetMax();
+        $this->required = $numberfield->GetRequired();
+        $this->value = $numberfield->GetValue();
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
         
         $this->RealizeField($this->name);
@@ -108,11 +101,11 @@ class Textfield extends FieldModule
     
     /**
      * Gets the related backend form
-     * @return TextfieldForm Returns the form for the textarea settings
+     * @return NumberfieldForm Returns the form for the number field settings
      */
     public function ContentForm()
     {
-        return new TextfieldForm();
+        return new NumberfieldForm();
     }
     
     public function BackendName()
@@ -122,10 +115,9 @@ class Textfield extends FieldModule
         {
             return $name;
         }
-        $textfield = ContentTextfield::Schema()->ByContent($this->Content());
-        $name .= ' : ' . $textfield->GetName();
+        $numberfield = ContentNumberfield::Schema()->ByContent($this->Content());
+        $name .= ' : ' . $numberfield->GetName();
         return $name;
     }
    
 }
-

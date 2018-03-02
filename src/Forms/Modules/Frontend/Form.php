@@ -3,6 +3,7 @@ namespace Phine\Bundles\Forms\Modules\Frontend;
 use Phine\Bundles\Core\Logic\Module\FrontendForm;
 
 use App\Phine\Database\Forms\ContentTextfield;
+use App\Phine\Database\Forms\ContentNumberfield;
 use App\Phine\Database\Forms\ContentTextarea;
 use App\Phine\Database\Forms\ContentRadio;
 use App\Phine\Database\Forms\ContentCheckbox;
@@ -97,6 +98,10 @@ class Form extends FrontendForm
                 $this->HandleTextarea(ContentTextarea::Schema()->ByContent($content));
                 break;
             
+            case Numberfield::MyType():
+                $this->HandleNumberfield(ContentNumberfield::Schema()->ByContent($content));
+                break;
+            
             case Checkbox::MyType():
                 $this->HandleCheckbox(ContentCheckbox::Schema()->ByContent($content));
                 break;
@@ -119,10 +124,7 @@ class Form extends FrontendForm
     {
         $name = $textfield->GetName();
         $field = Fields\Input::Text($name, $textfield->GetValue());
-        if ($textfield->GetMaxLength())
-        {
-            $field->SetHtmlAttribute('maxlength', $textfield->GetMaxLength());
-        }
+        
         $this->AddField($field, !$textfield->GetLabel(), $textfield->GetLabel());
         if ($textfield->GetRequired())
         {
@@ -131,6 +133,28 @@ class Form extends FrontendForm
         $this->AddTextfieldValidations($textfield);
     }
     
+    private function HandleNumberfield(ContentNumberfield $numberfield)
+    {
+        $name = $numberfield->GetName();
+        $field = Fields\Input::Text($name, $numberfield->GetValue());
+        
+        $this->AddField($field, !$numberfield->GetLabel(), $numberfield->GetLabel());
+        if ($numberfield->GetRequired()) {
+            $this->SetRequired($name, self::TypeTranslationPrefix(Numberfield::MyType()));
+        }
+        $min = $numberfield->GetMin();
+        $max = $numberfield->GetMax();
+        $field->AddValidator(new Validation\Number($min, $max, true, true, self::TypeTranslationPrefix(Numberfield::MyType())));
+    }
+    private function GetStringLengthValidation($minLength, $maxLength) {
+        if (!$minLength && !$maxLength) {
+            return null;
+        }
+        if (!$maxLength) {
+            $maxLength = PHP_INT_MAX;
+        }
+        return new Validation\StringLength($minLength, $maxLength);
+    }
     private function AddTextfieldValidations(ContentTextfield $textfield)
     {
         $validators = array();
@@ -143,12 +167,10 @@ class Form extends FrontendForm
             case (string)TextfieldType::Url():
                 $validators[] = Validation\PhpFilter::Url();
                 break;
-            /*
-             * Missing numeric validator; add to core
-            case (string)TextfieldType::Numeric():
-                $validators[] = Validation\
-                break;
-            */
+        }
+        $strlenValidator = $this->GetStringLengthValidation($textfield->GetMinLength(), $textfield->GetMaxLength());
+        if ($strlenValidator) {
+            $validators[] = $strlenValidator;
         }
         if ($textfield->GetPattern())
         {
@@ -172,11 +194,18 @@ class Form extends FrontendForm
     
     private function HandleTextarea(ContentTextarea $textarea)
     {
-        $field = new Fields\Textarea($textarea->GetName(), $textarea->GetValue());
+        $name = $textarea->GetName();
+        $field = new Fields\Textarea($name, $textarea->GetValue());
         $this->AddField($field, !$textarea->GetLabel(), $textarea->GetLabel());
-        if ($textarea->GetRequired())
-        {
-            $this->SetRequired($textarea->GetName(), self::TypeTranslationPrefix(Textarea::MyType()));
+        if ($textarea->GetRequired()) {
+            $this->SetRequired($name, self::TypeTranslationPrefix(Textarea::MyType()));
+        }
+        if ($textarea->GetPattern()) {
+            $this->AddValidator($name, new Validation\RegExp($textarea->GetPattern()), self::TypeTranslationPrefix(Textarea::MyType()));
+        }
+        $strlenValidation = $this->GetStringLengthValidation($textarea->GetMinLength(), $textarea->GetMaxLength());
+        if ($strlenValidation) {
+            $this->AddValidator($name, $strlenValidation, self::TypeTranslationPrefix(Textarea::MyType()));
         }
     }
     

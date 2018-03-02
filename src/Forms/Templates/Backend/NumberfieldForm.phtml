@@ -1,35 +1,34 @@
-<h1><a href="<?php HtmlOut($this->BackLink()) ?>" class="fa fa-chevron-circle-left right" title="<?php TransOut('Core.ButtonText.Back')?>"></a><?php TransOut('Forms.TextareaForm.Title')?></h1>
-<p><?php TransOut('Forms.TextareaForm.Description') ?></p>
+<h1><a href="<?php HtmlOut($this->BackLink()) ?>" class="fa fa-chevron-circle-left right" title="<?php TransOut('Core.ButtonText.Back')?>"></a><?php TransOut('Forms.NumberfieldForm.Title')?></h1>
+<p><?php TransOut('Forms.NumberfieldForm.Description') ?></p>
 <form method="post" action="<?php HtmlOut(CurrentUri()) ?>">
     <fieldset>
-        <legend><?php TransOut('Forms.TextareaForm.Legend')?></legend>
+        <legend><?php TransOut('Forms.NumberfieldForm.Legend') ?></legend>
         <div class="row">
-            <div class="medium-6 columns">
+            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('Name') ?>
             </div>
-            <div class="medium-6 columns">
+            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('Label') ?>
             </div>
-        </div>
-        <div class="row">
-            <div class="medium-12 columns">
+            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('Value') ?>
             </div>
         </div>
         <div class="row">
-            <div class="medium-6 columns">
-                <?php echo $this->RenderElement('Required') ?>
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('Min') ?>
             </div>
-            <div class="medium-6 columns">
-                <?php echo $this->RenderElement('Pattern') ?>
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('Max') ?>
+            </div>
+            
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('Step') ?>
             </div>
         </div>
         <div class="row">
-            <div class="medium-6 columns">
-                <?php echo $this->RenderElement('MinLength') ?>
-            </div>
-            <div class="medium-6 columns">
-                <?php echo $this->RenderElement('MaxLength') ?>
+            <div class="medium-12 columns">
+                <?php echo $this->RenderElement('Required') ?>
             </div>
         </div>
         <div class="row">

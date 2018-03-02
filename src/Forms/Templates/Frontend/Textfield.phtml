@@ -1,7 +1,7 @@
 <?php if ($this->label): ?>
 <label<?php if ($this->checkFailed): ?> class="error"<?php endif; ?> for="<?php HtmlOut($this->id) ?>"><?php HtmlOut($this->label); ?></label>
 <?php endif; ?>
-<input name="<?php HtmlOut($this->name) ?>" id="<?php HtmlOut($this->id)?>" type="<?php HtmlOut($this->type) ?>" value="<?php HtmlOut($this->value)?>"<?php if ($this->required): ?> required="required"<?php endif; ?><?php if ($this->classes): ?> class="<?php HtmlOut($this->classes)?>"<?php endif ?><?php if ($this->pattern):  ?> pattern="<?php HtmlOut($this->pattern)?>"<?php endif ?><?php if ($this->maxLength):  ?> maxlength="<?php HtmlOut($this->maxLength)?>"<?php endif ?> />
+<input name="<?php HtmlOut($this->name) ?>" id="<?php HtmlOut($this->id)?>" type="<?php HtmlOut($this->type) ?>" value="<?php HtmlOut($this->value)?>"<?php if ($this->required): ?> required="required"<?php endif; ?><?php if ($this->classes): ?> class="<?php HtmlOut($this->classes)?>"<?php endif ?><?php if ($this->pattern):  ?> pattern="<?php HtmlOut($this->pattern)?>"<?php endif ?><?php if ($this->minLength):  ?> minlength="<?php HtmlOut($this->minLength)?>"<?php endif ?><?php if ($this->maxLength):  ?> maxlength="<?php HtmlOut($this->maxLength)?>"<?php endif ?> />
 <?php if ($this->checkFailed): ?>
 <small class="error">
     <?php foreach ($this->errors as $error): ?>

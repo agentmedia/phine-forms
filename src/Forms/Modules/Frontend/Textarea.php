@@ -41,6 +41,19 @@ class Textarea extends FieldModule
     protected $required;
     
     /**
+     * The minimum text length
+     * @var int
+     */
+    protected $minLength;
+    
+    
+    /**
+     * The maximum length
+     * @var int
+     */
+    protected $maxLength;
+    
+    /**
      * No child nodes allowed
      * @return boolean Returns false
      */
@@ -65,6 +78,8 @@ class Textarea extends FieldModule
         $this->label = $textarea->GetLabel();
         $this->name = $textarea->GetName();
         $this->value = $textarea->GetValue();
+        $this->minLength = $textarea->GetMinLength();
+        $this->maxLength = $textarea->GetMaxLength();
         $this->required = $textarea->GetRequired();
         $this->id = $this->CssID() ? $this->CssID() : $textarea->GetName();
         $this->RealizeField($this->name);

@@ -61,13 +61,21 @@ $translator->AddTranslation($lang, 'Forms.TextareaForm.Legend', 'Textarea Settin
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Value', 'Default Value');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Label', 'Label');
+
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Pattern', 'Prüfmuster');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Pattern.Placeholder', 'Regulärer Ausdruck');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MaxLength', 'Maximale Textlänge');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MinLength', 'Minimale Textlänge');
+
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Required', 'Is Obligatory (Text must be filled)');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Submit', 'Save');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Name.Validation.Required.Missing', 'Field name is required');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MinLength.Validation.Integer.HasNonDigits', 'Please insert an integer number');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MaxLength.Validation.Integer.HasNonDigits', 'Please insert an integer number');
 
 //textfield form
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Text', 'Arbitrary Text');
-$translator->AddTranslation($lang, 'Forms.TextfieldType.Numeric', 'Numeric');
+$translator->AddTranslation($lang, 'Forms.TextfieldType.Tel', 'Telephone Number');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Email', 'E-Mail');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Url', 'URL');
 
@@ -87,6 +95,8 @@ $translator->AddTranslation($lang, 'Forms.TextfieldForm.Submit', 'Save');
 
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Name.Validation.Required.Missing', 'Field name is required');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Type.Validation.Required.Missing', 'Please select the field type');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.MinLength.Validation.Integer.HasNonDigits', 'Please insert an integer number');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.MaxLength.Validation.Integer.HasNonDigits', 'Pleaese insert an integer number');
 
 //checkbox form
 $translator->AddTranslation($lang, 'Forms.Checkbox.BackendName', 'Checkbox');
@@ -121,3 +131,23 @@ $translator->AddTranslation($lang, 'Forms.FieldsetForm.Description', 'You can ad
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.FormLegend', 'Fieldset Settings');
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.Legend', 'Legend');
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.Submit', 'Save');
+
+/*numberfield form */
+$translator->AddTranslation($lang, 'Forms.Numberfield.BackendName', 'Number Field');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Title', 'Edit Number Field');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Description', 'Number fields can be filled with posiive and negative integer or floating point values. Among other settings, the value range can be adjusted here.');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Legend', 'Number Field Settings');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Label', 'Label');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Name', 'Name');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Value', 'Value');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min', 'Minimum');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max', 'Maximum');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step', 'Step Size');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Required', 'Is Obligatory');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Submit', 'Save');
+
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Name.Validation.Required.Missing', 'Name must be defined');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min.Validation.Number.NotParsed', 'Minimum must be an integer or floating point number');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max.Validation.Number.NotParsed', 'Maximum must be an integer or floating point number');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.NotParsed', 'Step size must be an integer or a floating point number');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.ExceedsMin_{0}', 'Step size must be positive or zero');

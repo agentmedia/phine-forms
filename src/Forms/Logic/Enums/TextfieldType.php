@@ -35,21 +35,22 @@ class TextfieldType extends Enum
     }
     
     /**
-     * Text field type 'email'
+     * Text field type 'search'
      * @return TextfieldType
      */
     static function Search()
     {
-        return new self('url');
+        return new self('search');
     }
     
+    
     /**
-     * Text field type 'numeric'
+     * Text field type 'tel' for telephone
      * @return TextfieldType
      */
-    static function Numeric()
+    static function Tel()
     {
-        return new self('numeric');
+        return new self('tel');
     }
 }
 

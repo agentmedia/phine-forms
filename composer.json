@@ -16,7 +16,7 @@
         "php": ">=5.3.0",
         "agentmedia/phine-builtin": "*",
         "agentmedia/phine-core": "*",
-        "agentmedia/phine-framework": "*",
+        "agentmedia/phine-framework": ">= 1.0.1",
         "phpmailer/phpmailer": ">=6.0.3"
         
     },

@@ -61,3 +61,9 @@ ALTER TABLE `pc_forms_radio_option`
 ALTER TABLE `pc_forms_select_option`
   ADD CONSTRAINT `pc_forms_select_option_ibfk_1` FOREIGN KEY (`SelectField`) REFERENCES `pc_forms_content_select` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pc_forms_select_option_ibfk_2` FOREIGN KEY (`Previous`) REFERENCES `pc_forms_select_option` (`ID`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints der Tabelle `pc_forms_content_numberfield`
+--
+ALTER TABLE `pc_forms_content_numberfield`
+  ADD CONSTRAINT `pc_forms_content_numberfield_ibfk_1` FOREIGN KEY (`Content`) REFERENCES `pc_core_content` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;

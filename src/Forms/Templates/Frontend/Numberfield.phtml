@@ -1,0 +1,13 @@
+<?php if ($this->label): ?>
+<label<?php if ($this->checkFailed): ?> class="error"<?php endif; ?> for="<?php HtmlOut($this->id) ?>"><?php HtmlOut($this->label); ?></label>
+<?php endif; ?>
+<input name="<?php HtmlOut($this->name) ?>" id="<?php HtmlOut($this->id)?>" type="number" value="<?php HtmlOut($this->value)?>"<?php if ($this->required): ?> required="required"<?php endif; ?><?php if ($this->classes): ?> class="<?php HtmlOut($this->classes)?>"<?php endif ?><?php if ($this->min !== null):  ?> min="<?php HtmlOut($this->min)?>"<?php endif ?><?php if ($this->max !== null):  ?> max="<?php HtmlOut($this->max)?>"<?php endif ?> />
+<?php if ($this->checkFailed): ?>
+<small class="error">
+    <?php foreach ($this->errors as $error): ?>
+    <span>
+        <?php HtmlOut($error); ?>
+    </span>
+    <?php endforeach ?>
+</small>
+<?php endif; ?>

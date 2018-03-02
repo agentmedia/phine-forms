@@ -62,14 +62,22 @@ $translator->AddTranslation($lang, 'Forms.TextareaForm.Legend', 'Textbereich-Ein
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Value', 'Standardwert');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Label', 'Label');
+
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Pattern', 'Prüfmuster');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Pattern.Placeholder', 'Regulärer Ausdruck');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MaxLength', 'Maximale Textlänge');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MinLength', 'Minimale Textlänge');
+
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Required', 'Pflichtfeld (Text muss ausgefüllt werden)');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Submit', 'Speichern');
 
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Name.Validation.Required.Missing', 'Der Feldname muss angegeben werden');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MinLength.Validation.Integer.HasNonDigits', 'Bitte eine Zahl eingeben');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.MaxLength.Validation.Integer.HasNonDigits', 'Bitte eine Zahl eingeben');
 
 //textfield form
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Text', 'Beliebiger Text');
-$translator->AddTranslation($lang, 'Forms.TextfieldType.Numeric', 'Numerisch');
+$translator->AddTranslation($lang, 'Forms.TextfieldType.Tel', 'Telefonnummer');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Email', 'E-Mail');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Url', 'Webadresse');
 
@@ -85,10 +93,14 @@ $translator->AddTranslation($lang, 'Forms.TextfieldForm.Type', 'Typ');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Pattern', 'Prüfmuster');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Pattern.Placeholder', 'Regulärer Ausdruck');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.MaxLength', 'Maximale Textlänge');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.MinLength', 'Minimale Textlänge');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Submit', 'Speichern');
+
 
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Name.Validation.Required.Missing', 'Der Feldname muss angegeben werden');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Type.Validation.Required.Missing', 'Bitte den Feldtypen auswählen');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.MinLength.Validation.Integer.HasNonDigits', 'Bitte eine Zahl eingeben');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.MaxLength.Validation.Integer.HasNonDigits', 'Bitte eine Zahl eingeben');
 
 //checkbox form
 $translator->AddTranslation($lang, 'Forms.Checkbox.BackendName', 'Kontrollkästchen');
@@ -123,3 +135,24 @@ $translator->AddTranslation($lang, 'Forms.FieldsetForm.Description', 'Passen Sie
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.FormLegend', 'Feldgruppeneinstellungen');
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.Legend', 'Überschrift');
 $translator->AddTranslation($lang, 'Forms.FieldsetForm.Submit', 'Speichern');
+
+/* numberfield form */
+$translator->AddTranslation($lang, 'Forms.Numberfield.BackendName', 'Zahlenfeld');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Title', 'Zahlenfeld bearbeiten');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Description', 'Ein Zahlenfeld kann negative und positive Zahlen mit oder ohne Nachkommastellen enthalten. Hier kann unter anderem der Wertebereich des Zahlenfeldes angepasst werden.');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Legend', 'Zahlenfeld-Einstellungen');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Label', 'Label');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Name', 'Name');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Value', 'Value');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min', 'Minimum');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max', 'Maximum');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step', 'Schrittweite');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Required', 'Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Submit', 'Speichern');
+
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Name.Validation.Required.Missing', 'Der Name muss gesetzt sein');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min.Validation.Number.NotParsed', 'Minimum muss eine ganze oder eine Fließkommazahl sein');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max.Validation.Number.NotParsed', 'Maximum muss eine ganze oder eine Fließkommazahl sein');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.NotParsed', 'Schrittweite muss eine ganze oder eine Fließkommazahl sein');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.ExceedsMin_{0}', 'Schrittweite muss positiv oder 0 sein');
+

@@ -44,6 +44,7 @@ class TextfieldForm extends ContentForm
         $this->AddNameField();
         $this->AddLabelField();
         $this->AddPatternField();
+        $this->AddMinLengthField();
         $this->AddMaxLengthField();
         $this->AddValueField();
         
@@ -109,6 +110,16 @@ class TextfieldForm extends ContentForm
         $this->AddValidator($name, Integer::Positive());
     }
     
+    private function AddMinLengthField()
+    {
+        $name = 'MinLength';
+        $value = $this->textfield->GetMinLength();
+        
+        $field = Input::Text($name, $value > 0 ? $value : '');
+        $this->AddField($field);
+        $this->AddValidator($name, Integer::Positive());
+    }
+    
     private function AddValueField()
     {
         $name = 'Value';
@@ -121,6 +132,7 @@ class TextfieldForm extends ContentForm
         $this->textfield->SetName($this->Value('Name'));
         $this->textfield->SetPattern($this->Value('Pattern'));
         $this->textfield->SetType($this->Value('Type'));
+        $this->textfield->SetMinLength((int)$this->Value('MinLength'));
         $this->textfield->SetMaxLength((int)$this->Value('MaxLength'));
         $this->textfield->SetValue($this->Value('Value'));
         $this->textfield->SetRequired((bool)$this->Value('Required'));
