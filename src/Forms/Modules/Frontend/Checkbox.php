@@ -77,7 +77,7 @@ class Checkbox extends FieldModule
         $this->label = $checkbox->GetLabel();
         $this->name = $checkbox->GetName();
         $this->checkedValue = $checkbox->GetCheckedValue();
-        $this->checked = $checkbox->GetChecked();
+        $this->checked = (boolean)$this->Value($this->name, $checkbox->GetChecked());
         $this->required = $disableValidation ? false: $checkbox->GetRequired();
         $this->id = $this->CssID() ? $this->CssID() : $checkbox->GetName();
         $this->RealizeField($this->name);

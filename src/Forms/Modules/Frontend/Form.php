@@ -370,6 +370,19 @@ class Form extends FrontendForm
         return RequestMethod::ByValue($this->form->GetMethod());
     }
     
+    
+    /**
+     * Gets the actual value of a field
+     * @param string $fieldName The name of the field
+     * @return string Returns the value as submitted ot the default value
+     */
+    public function GetValue($fieldName, $defaultValue) {
+        if ($this->IsTriggered()) {
+            return $this->Value($fieldName);
+        }
+        return $defaultValue;
+    }
+    
     public function BackendName()
     {
         $name = parent::BackendName();

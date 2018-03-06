@@ -59,3 +59,7 @@ Multiple translation additions
 === 1.2.0, 1.2.1 ===
 
 - Added customizable error texts
+
+=== 1.2.2 ===
+
+field values are now persistent when form is submitted

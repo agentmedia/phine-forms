@@ -57,7 +57,7 @@ class Radio extends FieldModule
         $this->label = $radio->GetLabel();
         $this->name = $radio->GetName();
         $this->required = $disableValidation ? false: $radio->GetRequired();
-        $this->value = $radio->GetValue();
+        $this->value = $this->Value($this->name, $radio->GetValue());
         $this->id = $this->CssID() ? $this->CssID(): $this->name;
         $list = new RadioListProvider($radio);
         $this->options = $list->ToArray();

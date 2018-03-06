@@ -78,7 +78,7 @@ class Textarea extends FieldModule
         $disableValidation = $textarea->GetDisableFrontendValidation();
         $this->label = $textarea->GetLabel();
         $this->name = $textarea->GetName();
-        $this->value = $textarea->GetValue();
+        $this->value = $this->Value($this->name, $textarea->GetValue());
         $this->minLength = $disableValidation? 0 : $textarea->GetMinLength();
         $this->maxLength = $disableValidation? 0 : $textarea->GetMaxLength();
         $this->required = $disableValidation? false : $textarea->GetRequired();

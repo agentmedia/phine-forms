@@ -93,7 +93,7 @@ class Numberfield extends FieldModule
         $this->max = $disableValidation ? null : $numberfield->GetMax();
         $this->step = $disableValidation ? 0 : $numberfield->GetStep();
         $this->required = $disableValidation ? false : $numberfield->GetRequired();
-        $this->value = $numberfield->GetValue();
+        $this->value = $this->Value($this->name, $numberfield->GetValue());
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
         
         $this->RealizeField($this->name);

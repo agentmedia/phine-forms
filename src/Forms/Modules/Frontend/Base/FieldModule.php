@@ -57,4 +57,18 @@ abstract class FieldModule extends FrontendModule
             }
         }
     }
+    
+    /**
+     * Gets the submitted value or the default value if nothing submitted
+     * @param string $fieldName The field name
+     * @param string $defaultValue
+     * @return string Returns the submitted value or the defaut value if form not yet triggered
+     */
+    protected function Value($fieldName, $defaultValue) {
+        $form = Form::Current();
+        if (!$form) {
+            return $defaultValue;
+        }
+        return $form->GetValue($fieldName, $defaultValue);
+    }
 }

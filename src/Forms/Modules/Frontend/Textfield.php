@@ -100,7 +100,7 @@ class Textfield extends FieldModule
         $this->minLength = $disableValidation ? 0 : (int)$textfield->GetMinLength();
         $this->maxLength = $disableValidation ? 0 : (int)$textfield->GetMaxLength();
         $this->required = $disableValidation ? false : $textfield->GetRequired();
-        $this->value = $textfield->GetValue();
+        $this->value = $this->Value($this->name, $textfield->GetValue());
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
         
         $this->RealizeField($this->name);

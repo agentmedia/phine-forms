@@ -55,7 +55,7 @@ class Select extends FieldModule
         $this->label = $select->GetLabel();
         $this->name = $select->GetName();
         $this->required = $select->GetRequired();
-        $this->value = $select->GetValue();
+        $this->value = $this->Value($this->name, $select->GetValue());
         $this->id = $this->CssID() ? $this->CssID(): $this->name;
         $list = new SelectListProvider($select);
         $this->options = $list->ToArray();
