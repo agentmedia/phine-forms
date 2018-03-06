@@ -156,3 +156,26 @@ $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min.Validation.Number.
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max.Validation.Number.NotParsed', 'Maximum must be an integer or floating point number');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.NotParsed', 'Step size must be an integer or a floating point number');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.ExceedsMin_{0}', 'Step size must be positive or zero');
+
+//Wordings
+
+$translator->AddTranslation($lang, 'Forms.CheckboxForm.Validation-Required-Missing', 'Must be checked');
+$translator->AddTranslation($lang, 'Forms.RadioForm.Validation-Required-Missing', 'Select an option');
+$translator->AddTranslation($lang, 'Forms.SelectForm.Validation-Required-Missing', 'Select an option');
+
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-Required-Missing', 'Enter text');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-PhpFilter-InvalidUrl', 'Invalid URL');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-PhpFilter-InvalidEmail', 'Invalid e-mail address');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooShort_{0}', 'Enter at least {0} characters');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooLong_{0}', 'Enter no more than {0} characters');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-RegExp-NoMatch', 'Invalid format');
+
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-Required-Missing', 'Insert text');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-StringLength-TooShort_{0}', 'Enter at least {0} characters');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-StringLength-TooLong_{0}', 'Enter no more than {0} characters');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-RegExp-NoMatch', 'Invalid format');
+        
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Required-Missing', 'Enter number');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-NotParsed', 'No number recognized');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMax_{0}', 'Number must not be more than {0}');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMin_{0}', 'Number must be at least {0}');

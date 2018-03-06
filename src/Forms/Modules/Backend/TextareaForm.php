@@ -157,6 +157,16 @@ class TextareaForm extends ContentForm
         $this->textarea->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
         return $this->textarea;
     }
+    
+    protected function Wordings()
+    {
+        $wordings = array();
+        $wordings[] = 'Validation.Required.Missing';
+        $wordings[] = 'Validation.StringLength.TooShort_{0}';
+        $wordings[] = 'Validation.StringLength.TooLong_{0}';
+        $wordings[] = 'Validation.RegExp.NoMatch';
+        
+    }
 
 }
 

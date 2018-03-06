@@ -55,3 +55,7 @@ Multiple translation additions
 === 1.1.2 ===
 
 - Reformatted textarea form to look better
+
+=== 1.2.0 ===
+
+- Added customizable error texts

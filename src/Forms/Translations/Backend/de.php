@@ -162,3 +162,24 @@ $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max.Validation.Number.
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.NotParsed', 'Schrittweite muss eine ganze oder eine Fließkommazahl sein');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step.Validation.Number.ExceedsMin_{0}', 'Schrittweite muss positiv oder 0 sein');
 
+//Wordings
+$translator->AddTranslation($lang, 'Forms.CheckboxForm.Validation-Required-Missing', 'Muss angekreuzt sein');
+$translator->AddTranslation($lang, 'Forms.RadioForm.Validation-Required-Missing', 'Bitte eine Auswahl treffen');
+$translator->AddTranslation($lang, 'Forms.SelectForm.Validation-Required-Missing', 'Bitte eine Option selektieren');
+
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-Required-Missing', 'Text ausfüllen');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation.PhpFilter-InvalidUrl', 'Ungültige Webadresse');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation.PhpFilter-InvalidEmail', 'Ungültige E-Mail-Adresse');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooShort_{0}', 'Mindestens {0} Zeichen eingeben');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooLong_{0}', 'Höchstens {0} Zeichen eingeben');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-RegExp-NoMatch', 'Ungültige Zeichenfolge');
+
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-Required-Missing', 'Text ausfüllen');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-StringLength-TooShort_{0}', 'Mindestens {0} Zeichen eingeben');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-StringLength-TooLong_{0}', 'Höchstens {0} Zeichen eingeben');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-RegExp-NoMatch', 'Ungültige Zeichenfolge');
+        
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Required-Missing', 'Zahl eintragen');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-NotParsed', 'Keine Zahl erkannt');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMax_{0}', 'Zahl darf den Wert {0} nicht überschreiten');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMin_{0}', 'Zahl darf den Wert {0} nicht untererschreiten');

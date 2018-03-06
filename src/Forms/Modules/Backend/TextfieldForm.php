@@ -154,6 +154,17 @@ class TextfieldForm extends ContentForm
         
         return $this->textfield;
     }
-
+    
+    protected function Wordings()
+    {
+        $wordings = parent::Wordings();
+        $wordings[] = 'Validation.Required.Missing';
+        $wordings[] = 'Validation.PhpFilter.InvalidUrl';
+        $wordings[] = 'Validation.PhpFilter.InvalidEmail';
+        $wordings[] = 'Validation.StringLength.TooShort_{0}';
+        $wordings[] = 'Validation.StringLength.TooLong_{0}';
+        $wordings[] = 'Validation.RegExp.NoMatch';
+        return $wordings;
+    }
 }
 
