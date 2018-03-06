@@ -55,6 +55,7 @@ class RadioForm extends ContentForm
         $this->AddOptionsField();
         
         $this->AddRequiredField();
+        $this->AddDisableFrontendValidationField();
         $this->AddTemplateField();
         $this->AddCssClassField();
         $this->AddCssIDField();
@@ -67,6 +68,15 @@ class RadioForm extends ContentForm
     private function AddRequiredField()
     {
         $field = new Checkbox('Required', '1', $this->radio->GetRequired());
+        $this->AddField($field);
+    }
+    
+    /**
+     * Adds the disable frontend validation flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Checkbox('DisableFrontendValidation', '1', $this->radio->GetDisableFrontendValidation());
         $this->AddField($field);
     }
     /**
@@ -141,6 +151,7 @@ class RadioForm extends ContentForm
         $this->radio->SetName($this->Value('Name'));
         $this->radio->SetValue($this->Value('Value'));
         $this->radio->SetRequired((bool)$this->Value('Required'));
+        $this->radio->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
         return $this->radio;
     }
     

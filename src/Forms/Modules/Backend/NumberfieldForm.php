@@ -39,6 +39,7 @@ class NumberfieldForm extends ContentForm
     {
         $this->numberfield = $this->LoadElement();
         $this->AddRequiredField();
+        $this->AddDisableFrontendValidationField();
         $this->AddNameField();
         $this->AddLabelField();
         $this->AddMinField();
@@ -58,6 +59,14 @@ class NumberfieldForm extends ContentForm
         $this->AddField($field);
     }
     
+    /**
+     * Adds the disable frontend validation flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Fields\Checkbox('DisableFrontendValidation', '1', $this->numberfield->GetDisableFrontendValidation());
+        $this->AddField($field);
+    }
   
     
     private function AddNameField()
@@ -115,8 +124,6 @@ class NumberfieldForm extends ContentForm
     {
         $this->numberfield->SetLabel($this->Value('Label'));
         $this->numberfield->SetName($this->Value('Name'));
-
-        $max = 0;
         
         $this->numberfield->SetMax($this->ParseFloat($this->Value('Max'), true));
         $this->numberfield->SetMin($this->ParseFloat($this->Value('Min'), true));
@@ -124,6 +131,8 @@ class NumberfieldForm extends ContentForm
 
         $this->numberfield->SetValue($this->Value('Value'));
         $this->numberfield->SetRequired((bool)$this->Value('Required'));
+        $this->numberfield->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
+        
         return $this->numberfield;
     }
     

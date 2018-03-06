@@ -53,9 +53,10 @@ class Radio extends FieldModule
     protected function Init()
     {
         $radio = ContentRadio::Schema()->ByContent($this->Content());
+        $disableValidation = $radio->GetDisableFrontendValidation();
         $this->label = $radio->GetLabel();
         $this->name = $radio->GetName();
-        $this->required = $radio->GetRequired();
+        $this->required = $disableValidation ? false: $radio->GetRequired();
         $this->value = $radio->GetValue();
         $this->id = $this->CssID() ? $this->CssID(): $this->name;
         $list = new RadioListProvider($radio);

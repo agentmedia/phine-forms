@@ -86,12 +86,13 @@ class Numberfield extends FieldModule
     protected function Init()
     {
         $numberfield = ContentNumberfield::Schema()->ByContent($this->Content());
+        $disableValidation = $numberfield->GetDisableFrontendValidation();
         $this->label = $numberfield->GetLabel();
         $this->name = $numberfield->GetName();
-        $this->min = $numberfield->GetMin();
-        $this->max = $numberfield->GetMax();
-        $this->step = $numberfield->GetStep();
-        $this->required = $numberfield->GetRequired();
+        $this->min = $disableValidation ? null : $numberfield->GetMin();
+        $this->max = $disableValidation ? null : $numberfield->GetMax();
+        $this->step = $disableValidation ? 0 : $numberfield->GetStep();
+        $this->required = $disableValidation ? false : $numberfield->GetRequired();
         $this->value = $numberfield->GetValue();
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
         

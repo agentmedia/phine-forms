@@ -35,3 +35,7 @@ Multiple translation additions
 === 1.0.9 ===
 
 - corrected the step attribute to default to "any"
+
+=== 1.0.10 ===
+
+- Multiple Changes to allow disabling html validation

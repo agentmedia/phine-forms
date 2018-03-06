@@ -32,7 +32,8 @@ $translator->AddTranslation($lang, 'Forms.RadioForm.Description', 'Hier können 
 $translator->AddTranslation($lang, 'Forms.RadioForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.RadioForm.Label', 'Label');
 $translator->AddTranslation($lang, 'Forms.RadioForm.Value', 'Standard-Wert');
-$translator->AddTranslation($lang, 'Forms.RadioForm.Required', 'Pflichtfeld (Eine Option muss ausgewählt werden)');
+$translator->AddTranslation($lang, 'Forms.RadioForm.Required', 'Ist Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.RadioForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.RadioForm.Options', 'Optionen');
 $translator->AddTranslation($lang, 'Forms.RadioForm.Options.Placeholder', 'Je Zeile eine Option in der Form Wert:Anzeigetext');
 $translator->AddTranslation($lang, 'Forms.RadioForm.Submit', 'Speichern');
@@ -47,9 +48,10 @@ $translator->AddTranslation($lang, 'Forms.SelectForm.Legend', 'Auswahlbox-Einste
 $translator->AddTranslation($lang, 'Forms.SelectForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.SelectForm.Label', 'Label');
 $translator->AddTranslation($lang, 'Forms.SelectForm.Value', 'Standardwert');
-$translator->AddTranslation($lang, 'Forms.SelectForm.Required', 'Pflichtfeld (Option mit nichtleerem Wert muss ausgewählt werden)');
+$translator->AddTranslation($lang, 'Forms.SelectForm.Required', 'Ist Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.SelectForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.SelectForm.Options', 'Optionen');
-$translator->AddTranslation($lang, 'Forms.SelectForm.Options.Placeholder', 'Eine Option pro Zeile im Format Value:Text');
+$translator->AddTranslation($lang, 'Forms.SelectForm.Options.Placeholder', 'Eine Option pro Zeile im Format Wert:Text');
 $translator->AddTranslation($lang, 'Forms.SelectForm.Submit', 'Speichern');
 
 $translator->AddTranslation($lang, 'Forms.SelectForm.Name.Validation.Required.Missing', 'Der Feldname muss angegeben werden');
@@ -68,7 +70,8 @@ $translator->AddTranslation($lang, 'Forms.TextareaForm.Pattern.Placeholder', 'Re
 $translator->AddTranslation($lang, 'Forms.TextareaForm.MaxLength', 'Maximale Textlänge');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.MinLength', 'Minimale Textlänge');
 
-$translator->AddTranslation($lang, 'Forms.TextareaForm.Required', 'Pflichtfeld (Text muss ausgefüllt werden)');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.Required', 'Ist Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.TextareaForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Submit', 'Speichern');
 
 $translator->AddTranslation($lang, 'Forms.TextareaForm.Name.Validation.Required.Missing', 'Der Feldname muss angegeben werden');
@@ -88,7 +91,8 @@ $translator->AddTranslation($lang, 'Forms.TextfieldForm.Legend', 'Textfeld-Einst
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Value', 'Standardwert');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Label', 'Label');
-$translator->AddTranslation($lang, 'Forms.TextfieldForm.Required', 'Pflichtfeld (Text muss eingegeben werden)');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Required', 'Ist Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Type', 'Typ');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Pattern', 'Prüfmuster');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Pattern.Placeholder', 'Regulärer Ausdruck');
@@ -110,7 +114,8 @@ $translator->AddTranslation($lang, 'Forms.CheckboxForm.Legend', 'Kontrollkästch
 $translator->AddTranslation($lang, 'Forms.CheckboxForm.Name', 'Name');
 $translator->AddTranslation($lang, 'Forms.CheckboxForm.CheckedValue', 'Übermittelter Wert');
 $translator->AddTranslation($lang, 'Forms.CheckboxForm.Label', 'Label');
-$translator->AddTranslation($lang, 'Forms.CheckboxForm.Required', 'Pflichtfeld (Haken muss gesetzt werden)');
+$translator->AddTranslation($lang, 'Forms.CheckboxForm.Required', 'Pflichtfeld, Haken muss gesetzt sein');
+$translator->AddTranslation($lang, 'Forms.CheckboxForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.CheckboxForm.Checked', 'Vorab angekreuzt');
 $translator->AddTranslation($lang, 'Forms.CheckboxForm.Submit', 'Speichern');
 
@@ -148,6 +153,7 @@ $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Min', 'Minimum');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Max', 'Maximum');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Step', 'Schrittweite');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Required', 'Pflichtfeld');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.DisableFrontendValidation', 'HTML-Validierung ausschalten');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Submit', 'Speichern');
 
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Name.Validation.Required.Missing', 'Der Name muss gesetzt sein');

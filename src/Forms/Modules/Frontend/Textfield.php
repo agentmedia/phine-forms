@@ -92,13 +92,14 @@ class Textfield extends FieldModule
     protected function Init()
     {
         $textfield = ContentTextfield::Schema()->ByContent($this->Content());
+        $disableValidation = $textfield->GetDisableFrontendValidation();
         $this->label = $textfield->GetLabel();
         $this->name = $textfield->GetName();
         $this->pattern = $textfield->GetPattern();
-        $this->type = TextfieldType::ByValue($textfield->GetType());
-        $this->minLength = (int)$textfield->GetMinLength();
-        $this->maxLength = (int)$textfield->GetMaxLength();
-        $this->required = $textfield->GetRequired();
+        $this->type = $disableValidation ? TextfieldType::Text() : TextfieldType::ByValue($textfield->GetType());
+        $this->minLength = $disableValidation ? 0 : (int)$textfield->GetMinLength();
+        $this->maxLength = $disableValidation ? 0 : (int)$textfield->GetMaxLength();
+        $this->required = $disableValidation ? false : $textfield->GetRequired();
         $this->value = $textfield->GetValue();
         $this->id = $this->CssID() ? $this->CssID() : $this->name;
         
@@ -126,6 +127,4 @@ class Textfield extends FieldModule
         $name .= ' : ' . $textfield->GetName();
         return $name;
     }
-   
 }
-

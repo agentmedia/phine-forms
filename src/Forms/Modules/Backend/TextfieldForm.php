@@ -40,6 +40,8 @@ class TextfieldForm extends ContentForm
     {
         $this->textfield = $this->LoadElement();
         $this->AddTypeField();
+        
+        $this->AddDisableFrontendValidationField();
         $this->AddRequiredField();
         $this->AddNameField();
         $this->AddLabelField();
@@ -54,9 +56,21 @@ class TextfieldForm extends ContentForm
         $this->AddSubmit();
     }
     
+    /**
+     * Adds the required flag field
+     */
     private function AddRequiredField()
     {
         $field = new Checkbox('Required', '1', $this->textfield->GetRequired());
+        $this->AddField($field);
+    }
+    
+    /**
+     * Adds the required flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Checkbox('DisableFrontendValidation', '1', $this->textfield->GetDisableFrontendValidation());
         $this->AddField($field);
     }
     
@@ -136,6 +150,8 @@ class TextfieldForm extends ContentForm
         $this->textfield->SetMaxLength((int)$this->Value('MaxLength'));
         $this->textfield->SetValue($this->Value('Value'));
         $this->textfield->SetRequired((bool)$this->Value('Required'));
+        $this->textfield->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
+        
         return $this->textfield;
     }
 

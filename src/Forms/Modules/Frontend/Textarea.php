@@ -75,12 +75,13 @@ class Textarea extends FieldModule
     protected function Init()
     {
         $textarea = ContentTextarea::Schema()->ByContent($this->Content());
+        $disableValidation = $textarea->GetDisableFrontendValidation();
         $this->label = $textarea->GetLabel();
         $this->name = $textarea->GetName();
         $this->value = $textarea->GetValue();
-        $this->minLength = $textarea->GetMinLength();
-        $this->maxLength = $textarea->GetMaxLength();
-        $this->required = $textarea->GetRequired();
+        $this->minLength = $disableValidation? 0 : $textarea->GetMinLength();
+        $this->maxLength = $disableValidation? 0 : $textarea->GetMaxLength();
+        $this->required = $disableValidation? false : $textarea->GetRequired();
         $this->id = $this->CssID() ? $this->CssID() : $textarea->GetName();
         $this->RealizeField($this->name);
         return parent::Init();

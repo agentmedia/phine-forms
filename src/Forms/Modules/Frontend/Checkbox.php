@@ -73,11 +73,12 @@ class Checkbox extends FieldModule
     protected function Init()
     {
         $checkbox = ContentCheckbox::Schema()->ByContent($this->Content());
+        $disableValidation = $checkbox->GetDisableFrontendValidation();
         $this->label = $checkbox->GetLabel();
         $this->name = $checkbox->GetName();
         $this->checkedValue = $checkbox->GetCheckedValue();
         $this->checked = $checkbox->GetChecked();
-        $this->required = $checkbox->GetRequired();
+        $this->required = $disableValidation ? false: $checkbox->GetRequired();
         $this->id = $this->CssID() ? $this->CssID() : $checkbox->GetName();
         $this->RealizeField($this->name);
         return parent::Init();
@@ -106,4 +107,3 @@ class Checkbox extends FieldModule
     }
    
 }
-

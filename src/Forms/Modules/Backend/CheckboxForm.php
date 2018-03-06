@@ -46,7 +46,7 @@ class CheckboxForm extends ContentForm
         $this->AddLabelField();
         $this->AddCheckedField();
         $this->AddCheckedValueField();
-        
+        $this->AddDisableFrontendValidationField();
         $this->AddCssIDField();
         $this->AddCssClassField();
         $this->AddTemplateField();
@@ -59,6 +59,15 @@ class CheckboxForm extends ContentForm
     private function AddRequiredField()
     {
         $field = new Fields\Checkbox('Required', '1', $this->checkbox->GetRequired());
+        $this->AddField($field);
+    }
+    
+    /**
+     * Adds the disable frontend validation flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Fields\Checkbox('DisableFrontendValidation', '1', $this->checkbox->GetDisableFrontendValidation());
         $this->AddField($field);
     }
     
@@ -114,6 +123,8 @@ class CheckboxForm extends ContentForm
         $this->checkbox->SetChecked((bool)$this->Value('Checked'));
         $this->checkbox->SetCheckedValue($this->Value('CheckedValue'));
         $this->checkbox->SetRequired((bool)$this->Value('Required'));
+        $this->checkbox->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
+        
         return $this->checkbox;
     }
 

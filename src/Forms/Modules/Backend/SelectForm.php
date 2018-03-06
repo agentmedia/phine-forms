@@ -54,6 +54,7 @@ class SelectForm extends ContentForm
         $this->AddLabelField();
         $this->AddOptionsField();
         
+        $this->AddDisableFrontendValidationField();
         $this->AddRequiredField();
         $this->AddTemplateField();
         $this->AddCssClassField();
@@ -69,6 +70,16 @@ class SelectForm extends ContentForm
         $field = new Checkbox('Required', '1', $this->select->GetRequired());
         $this->AddField($field);
     }
+    
+    /**
+     * Adds the disable frontend validation flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Checkbox('DisableFrontendValidation', '1', $this->select->GetDisableFrontendValidation());
+        $this->AddField($field);
+    }
+    
     /**
      * Adds the name field
      */
@@ -140,6 +151,7 @@ class SelectForm extends ContentForm
         $this->select->SetLabel($this->Value('Label'));
         $this->select->SetName($this->Value('Name'));
         $this->select->SetValue($this->Value('Value'));
+        $this->select->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
         $this->select->SetRequired((bool)$this->Value('Required'));
         return $this->select;
     }

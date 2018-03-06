@@ -45,6 +45,7 @@ class TextareaForm extends ContentForm
         $this->AddNameField();
         $this->AddValueField();
         $this->AddLabelField();
+        $this->AddDisableFrontendValidationField();
         $this->AddRequiredField();
         $this->AddMinLengthField();
         $this->AddMaxLengthField();
@@ -64,6 +65,18 @@ class TextareaForm extends ContentForm
         $this->AddField($field);
     }
     
+    /**
+     * Adds the disable frontend validation flag field
+     */
+    private function AddDisableFrontendValidationField()
+    {
+        $field = new Fields\Checkbox('DisableFrontendValidation', '1', $this->textarea->GetDisableFrontendValidation());
+        $this->AddField($field);
+    }
+    
+    /**
+     * Adds the pattern (regular expression for validation) field
+     */
     private function AddPatternField()
     {
         $name = 'Pattern';
@@ -72,6 +85,9 @@ class TextareaForm extends ContentForm
         $this->SetTransAttribute($name, 'placeholder');
     }
     
+    /**
+     * Adds the max length field
+     */
     private function AddMaxLengthField()
     {
         $name = 'MaxLength';
@@ -82,6 +98,9 @@ class TextareaForm extends ContentForm
         $this->AddValidator($name, Integer::Positive());
     }
     
+    /**
+     * Adds the min length field
+     */
     private function AddMinLengthField()
     {
         $name = 'MinLength';
@@ -135,6 +154,7 @@ class TextareaForm extends ContentForm
         $this->textarea->SetMinLength((int)$this->Value('MinLength'));
         $this->textarea->SetMaxLength((int)$this->Value('MaxLength'));
         $this->textarea->SetRequired((bool)$this->Value('Required'));
+        $this->textarea->SetDisableFrontendValidation((bool)$this->Value('DisableFrontendValidation'));
         return $this->textarea;
     }
 
