@@ -4,13 +4,15 @@
     <fieldset>
         <legend><?php TransOut('Forms.TextareaForm.Legend')?></legend>
         <div class="row">
-            <div class="medium-4 columns">
+            <div class="medium-6 columns">
                 <?php echo $this->RenderElement('Name') ?>
             </div>
-            <div class="medium-4 columns">
+            <div class="medium-6 columns">
                 <?php echo $this->RenderElement('Label') ?>
             </div>
-            <div class="medium-4 columns">
+        </div>
+        <div class="row">
+            <div class="medium-12 columns">
                 <?php echo $this->RenderElement('Value') ?>
             </div>
         </div>
@@ -19,18 +21,18 @@
                 <?php echo $this->RenderElement('Required') ?>
             </div>
             <div class="medium-4 columns">
-                <?php echo $this->RenderElement('Pattern') ?>
-            </div>
-            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('DisableFrontendValidation') ?>
             </div>
         </div>
         <div class="row">
-            <div class="medium-6 columns">
+            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('MinLength') ?>
             </div>
-            <div class="medium-6 columns">
+            <div class="medium-4 columns">
                 <?php echo $this->RenderElement('MaxLength') ?>
+            </div>
+            <div class="medium-4 columns">
+                <?php echo $this->RenderElement('Pattern') ?>
             </div>
         </div>
         <div class="row">

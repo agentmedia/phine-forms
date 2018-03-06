@@ -47,3 +47,11 @@ Multiple translation additions
 === 1.1.0 ===
 
 - Multiple Changes to allow disabling html validation
+
+=== 1.1.1 ===
+
+- Fixed Bug with the number field
+
+=== 1.1.2 ===
+
+- Reformatted textarea form to look better
