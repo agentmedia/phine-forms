@@ -20,13 +20,14 @@ class Manifest extends BundleManifest
     {
         $this->core = new Core\Manifest();
     }
+
     /**
      * The version
      * @return string Returns the bundle version
      */
     public function Version()
     {
-        return '1.0.9';
+        return '1.0.10';
     }
     
     /**
