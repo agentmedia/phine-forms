@@ -52,9 +52,10 @@ class Select extends FieldModule
     protected function Init()
     {
         $select = ContentSelect::Schema()->ByContent($this->Content());
+        $disableValidation = $select->GetDisableFrontendValidation();
         $this->label = $select->GetLabel();
         $this->name = $select->GetName();
-        $this->required = $select->GetRequired();
+        $this->required = $disableValidation ? false : $select->GetRequired();
         $this->value = $this->Value($this->name, $select->GetValue());
         $this->id = $this->CssID() ? $this->CssID(): $this->name;
         $list = new SelectListProvider($select);

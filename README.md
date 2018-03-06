@@ -63,3 +63,9 @@ Multiple translation additions
 === 1.2.2 ===
 
 field values are now persistent when form is submitted
+
+=== 1.2.3 ===
+
+- minor translation fixes
+- added missing "required" wording field to checkbox
+- disabled HTML validation on select field now working

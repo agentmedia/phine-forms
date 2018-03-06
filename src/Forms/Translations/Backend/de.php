@@ -83,6 +83,7 @@ $translator->AddTranslation($lang, 'Forms.TextfieldType.Text', 'Beliebiger Text'
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Tel', 'Telefonnummer');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Email', 'E-Mail');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Url', 'Webadresse');
+$translator->AddTranslation($lang, 'Forms.TextfieldType.Search', 'Suchfeld');
 
 $translator->AddTranslation($lang, 'Forms.Textfield.BackendName', 'Textfeld');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Title', 'Textfeld bearbeiten');
@@ -168,8 +169,8 @@ $translator->AddTranslation($lang, 'Forms.RadioForm.Validation-Required-Missing'
 $translator->AddTranslation($lang, 'Forms.SelectForm.Validation-Required-Missing', 'Bitte eine Option selektieren');
 
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-Required-Missing', 'Text ausfüllen');
-$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation.PhpFilter-InvalidUrl', 'Ungültige Webadresse');
-$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation.PhpFilter-InvalidEmail', 'Ungültige E-Mail-Adresse');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-PhpFilter-InvalidUrl', 'Ungültige Webadresse');
+$translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-PhpFilter-InvalidEmail', 'Ungültige E-Mail-Adresse');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooShort_{0}', 'Mindestens {0} Zeichen eingeben');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-StringLength-TooLong_{0}', 'Höchstens {0} Zeichen eingeben');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Validation-RegExp-NoMatch', 'Ungültige Zeichenfolge');
@@ -182,4 +183,4 @@ $translator->AddTranslation($lang, 'Forms.TextareaForm.Validation-RegExp-NoMatch
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Required-Missing', 'Zahl eintragen');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-NotParsed', 'Keine Zahl erkannt');
 $translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMax_{0}', 'Zahl darf den Wert {0} nicht überschreiten');
-$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMin_{0}', 'Zahl darf den Wert {0} nicht untererschreiten');
+$translator->AddTranslation($lang, 'Forms.NumberfieldForm.Validation-Number-ExceedsMin_{0}', 'Zahl darf den Wert {0} nicht unterschreiten');

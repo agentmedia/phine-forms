@@ -80,6 +80,7 @@ $translator->AddTranslation($lang, 'Forms.TextfieldType.Text', 'Arbitrary Text')
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Tel', 'Telephone Number');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Email', 'E-Mail');
 $translator->AddTranslation($lang, 'Forms.TextfieldType.Url', 'URL');
+$translator->AddTranslation($lang, 'Forms.TextfieldType.Search', 'Search Field');
 
 $translator->AddTranslation($lang, 'Forms.Textfield.BackendName', 'Text Field');
 $translator->AddTranslation($lang, 'Forms.TextfieldForm.Title', 'Edit Text Field');

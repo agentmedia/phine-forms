@@ -24,4 +24,4 @@ $translator->AddTranslation($lang, 'Forms.Textarea.Validation.RegExp.NoMatch', '
 $translator->AddTranslation($lang, 'Forms.Numberfield.Validation.Required.Missing', 'Zahl eintragen');
 $translator->AddTranslation($lang, 'Forms.Numberfield.Validation.Number.NotParsed', 'Keine Zahl erkannt');
 $translator->AddTranslation($lang, 'Forms.Numberfield.Validation.Number.ExceedsMax_{0}', 'Zahl darf den Wert {0} nicht überschreiten');
-$translator->AddTranslation($lang, 'Forms.Numberfield.Validation.Number.ExceedsMin_{0}', 'Zahl darf den Wert {0} nicht untererschreiten');
+$translator->AddTranslation($lang, 'Forms.Numberfield.Validation.Number.ExceedsMin_{0}', 'Zahl darf den Wert {0} nicht unterschreiten');

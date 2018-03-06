@@ -127,6 +127,13 @@ class CheckboxForm extends ContentForm
         
         return $this->checkbox;
     }
+    
+    protected function Wordings()
+    {
+        $wordings = array();
+        $wordings[] = 'Validation.Required.Missing';
+        return $wordings;
+    }
 
 }
 
