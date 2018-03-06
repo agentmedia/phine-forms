@@ -56,6 +56,6 @@ Multiple translation additions
 
 - Reformatted textarea form to look better
 
-=== 1.2.0 ===
+=== 1.2.0, 1.2.1 ===
 
 - Added customizable error texts

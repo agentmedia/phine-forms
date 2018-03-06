@@ -165,7 +165,7 @@ class TextareaForm extends ContentForm
         $wordings[] = 'Validation.StringLength.TooShort_{0}';
         $wordings[] = 'Validation.StringLength.TooLong_{0}';
         $wordings[] = 'Validation.RegExp.NoMatch';
-        
+        return $wordings;
     }
 
 }

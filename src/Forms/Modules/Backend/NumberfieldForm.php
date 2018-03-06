@@ -146,5 +146,14 @@ class NumberfieldForm extends ContentForm
         }
         return GlobalNumberParser::Parse($value);
     }
+    protected function Wordings()
+    {
+        $wordings = array();
+        $wordings[] = 'Validation.Required.Missing';
+        $wordings[] = 'Validation.Number.ExceedsMin_{0}';
+        $wordings[] = 'Validation.Number.ExceedsMax_{0}';
+        $wordings[] = 'Validation.Number.NotParsed';
+        return $wordings;
+    }
 }
 

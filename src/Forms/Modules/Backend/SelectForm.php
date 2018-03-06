@@ -221,6 +221,13 @@ class SelectForm extends ContentForm
         }
         return $result;
     }
+    
+    protected function Wordings()
+    {
+        $wordings = array();
+        $wordings[] = 'Validation.Required.Missing';
+        return $wordings;
+    }
 
 }
 
