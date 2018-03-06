@@ -64,7 +64,7 @@ class NumberfieldForm extends ContentForm
      */
     private function AddDisableFrontendValidationField()
     {
-        $field = new Fields\Checkbox('DisableFrontendValidation', '1', $this->numberfield->GetDisableFrontendValidation());
+        $field = new Checkbox('DisableFrontendValidation', '1', $this->numberfield->GetDisableFrontendValidation());
         $this->AddField($field);
     }
   

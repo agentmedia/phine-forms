@@ -1,9 +1,12 @@
 = phine-forms =
+
 The forms phine bundle allows building forms that can be sent via e-mail or stored in the database.
 A wide range of validations can be applied to the form elements.
 
-== Version history
+== Version history ==
+
 === 1.0.0 ==
+
 Included are the following form parts
 - Checkbox
 - Fieldset
@@ -15,6 +18,7 @@ Included are the following form parts
 - Textfield
 
 === 1.0.0 - 1.0.4 ===
+
 Multiple translation additions
 
 === 1.0.5, 1.0.6 ===
@@ -35,6 +39,10 @@ Multiple translation additions
 === 1.0.9 ===
 
 - corrected the step attribute to default to "any"
+
+=== 1.1.0 ===
+
+- Multiple Changes to allow disabling html validation
 
 === 1.1.0 ===
 
